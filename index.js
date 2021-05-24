@@ -92,7 +92,7 @@ const questions = [
             }
         }
     },
-    
+
     //tests
 
     {
@@ -128,7 +128,7 @@ const questions = [
     {
         type: 'input',
         name: 'github',
-        message: 'Enter your GitHub Username (Required)',
+        message: 'Please enter your GitHub username',
         validate: githubInput => {
             if (githubInput) {
                 return true;
@@ -148,6 +148,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
+
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err)
@@ -157,6 +158,7 @@ function writeToFile(fileName, data) {
 };
 
 // TODO: Create a function to initialize app
+
 function init() {
     inquirer.prompt(questions)
     .then(function (userInput) {
