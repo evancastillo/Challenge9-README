@@ -39,7 +39,7 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'How do you install your project? (Required)',
+        message: 'How is this project installed?',
         validate: installationInput => {
             if (installationInput) {
                 return true;
@@ -52,7 +52,7 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'How do you use this project? (Required)',
+        message: 'How do you use this project?',
         validate: usageInput => {
             if (usageInput) {
                 return true;
@@ -63,10 +63,11 @@ const questions = [
     },
 
     //license
+
     {
         type: 'checkbox',
         name: 'licensing',
-        message: 'Choose a license for your project (Required)',
+        message: 'Please select a license for your project',
         choices: ['Apache', 'MIT', 'Mozilla-Public', 'GNU-General-Public', 'Common-Development-and Distribution', 'None'],
         validate: licensingInput => {
             if (licensingInput) {
@@ -78,10 +79,11 @@ const questions = [
     },
 
     //contributing
+
     {
         type: 'input',
         name: 'contribution',
-        message: 'How should people contribute to this project? (Required)',
+        message: 'How should people contribute to this project?',
         validate: contributionInput => {
             if (contributionInput) {
                 return true;
@@ -90,11 +92,13 @@ const questions = [
             }
         }
     },
-    //tests 
+    
+    //tests
+
     {
         type: 'input',
         name: 'testing',
-        message: 'How do you test this project? (Required)',
+        message: 'How can you test this project?',
         validate: testingInput => {
             if (testingInput) {
                 return true;
@@ -104,7 +108,23 @@ const questions = [
         }
     },
 
+    //questions
+
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'What should we do if we have questions about the project?',
+        validate: questionInput => {
+            if (questionInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+
     //github username
+
     {
         type: 'input',
         name: 'github',
@@ -117,14 +137,14 @@ const questions = [
             }
         }
     },
+
     //email
+
     {
         type: 'input',
         name: 'email',
         message: 'Would you like to include your email?',
     },
-
-
 ];
 
 // TODO: Create a function to write README file
@@ -132,7 +152,7 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err)
             throw err;
-        console.log('Success! Information transferred to the README!')
+        console.log('Information added to README')
     });
 };
 
